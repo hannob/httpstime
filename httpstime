@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# secure time setting via HTTPS
+# by Hanno Böck
+
+if [[ -z "$1" ]]; then
+	HOST=www.google.com
+else
+	HOST=$1
+fi
+
+DATESTRING=$(curl -sI "https://$HOST/" | grep -i "^date: ")
+
+if [[ $? -ne 0 ]]; then
+	echo "Can't connect to $HOST"
+	exit 1
+fi
+
+DATESTRING="${DATESTRING/Date: /}"
+DATESTRING="${DATESTRING/date: /}"
+
+date -s "${DATESTRING}" > /dev/null
+
+[[ $? -eq 0 ]] || echo "Time setting failed - maybe you are not root?"
