@@ -6,9 +6,9 @@ Born out of frustration with all other existing solutions, see also:
 
 * https://blog.hboeck.de/archives/890-In-Search-of-a-Secure-Time-Source.html
 
-By default it will use the HTTP Date header from www.google.com to
-set the time. Alternatively another hostname can be passed on the
-command line.
+By default it will use the HTTP Date header from
+[www.google.com](https://www.google.com) to set the time. Alternatively
+another hostname can be passed on the command line.
 
 Unlike NTP setting the time via HTTPS provides protection against
 man in the middle attacks.
