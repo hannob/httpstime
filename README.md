@@ -1,6 +1,9 @@
 httpstime
 =========
 
+> :warning: I do not recommend using this script any more. Instead,
+> use an NTP client implementation that supports NTS / RFC 8915.
+
 Simple bash script to set the system time via HTTPS.
 Born out of frustration with all other existing solutions, see also:
 
